@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Overview from './components/Overview';
 import Users from './components/Users';
 import Messages from './components/Messages';
 import Offers from './components/Offers';
@@ -16,13 +17,19 @@ function App() {
         <div className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h1 className="text-4xl font-bold text-gray-800 mb-4 text-right">
-                  مرحباً بك يا مدير
-                </h1>
-                <p className="text-gray-600 text-lg text-right">
-                  نتمنى لك يوماً سعيداً
-                </p>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-lg shadow-lg">
+                  <h1 className="text-4xl font-bold text-gray-800 mb-4 text-right">
+                    مرحباً بك يا مدير
+                  </h1>
+                  <p className="text-gray-600 text-lg text-right">
+                    نتمنى لك يوماً سعيداً
+                  </p>
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-4 text-right">نظرة عامة على النظام</h2>
+                  <Overview />
+                </div>
               </div>
             } />
             <Route path="/users" element={
